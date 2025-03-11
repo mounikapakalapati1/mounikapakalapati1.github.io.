@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mounika Pakalapati- Portfolio</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+       
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+       
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+       
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+       
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 20px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+       
+        .profile-img span {
+            font-size: 60px;
+            color: #6a11cb;
+        }
+       
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+       
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+       
+        /* Contact Info */
+        .contact-info {
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px auto 0;
+            max-width: 500px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+       
+        .contact-info div {
+            display: flex;
+            align-items: center;
+        }
+       
+        .contact-info i {
+            margin-right: 8px;
+        }
+       
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+       
+        section:nth-child(even) {
+            background-color: white;
+        }
+       
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+       
+        .section-title h2 {
+            display: inline-block;
+            font-size: 2rem;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2575fc;
+        }
+       
+        /* Education */
+        .education-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+       
+        .education-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+       
+        section:nth-child(even) .education-item {
+            background-color: #f8f9fa;
+        }
+       
+        .education-item:hover {
+            transform: translateY(-5px);
+        }
+       
+        .education-item h3 {
+            color: #2575fc;
+            margin-bottom: 10px;
+        }
+       
+        .education-item p {
+            margin-bottom: 5px;
+        }
+       
+        .education-item .highlight {
+            font-weight: bold;
+            color: #6a11cb;
+        }
+       
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+       
+        .skill-category {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+       
+        section:nth-child(even) .skill-category {
+            background-color: #f8f9fa;
+        }
+       
+        .skill-category h3 {
+            color: #2575fc;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+       
+        .skill-item {
+            margin-bottom: 15px;
+        }
+       
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+       
+        .skill-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+       
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            border-radius: 5px;
+        }
+       
+        /* Certifications */
+        .certifications-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+       
+        .certification-item {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+       
+        section:nth-child(even) .certification-item {
+            background-color: #f8f9fa;
+        }
+       
+        .certification-item:hover {
+            transform: translateY(-5px);
+        }
+       
+        .certification-item h3 {
+            color: #2575fc;
+            margin-bottom: 10px;
+        }
+       
+        .certification-item p {
+            margin-bottom: 5px;
+        }
+       
+        /* Hobbies */
+        .hobbies-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+       
+        .hobby-item {
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+       
+        section:nth-child(even) .hobby-item {
+            background-color: #f8f9fa;
+        }
+       
+        .hobby-item:hover {
+            transform: translateY(-5px);
+        }
+       
+        .hobby-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #2575fc;
+        }
+       
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+       
+        footer p {
+            margin-bottom: 15px;
+        }
+       
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+       
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+       
+        .social-links a:hover {
+            background-color: #2575fc;
+        }
+       
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+           
+            .header-content p {
+                font-size: 1rem;
+            }
+           
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+           
+            .education-item, .skill-category, .certification-item, .hobby-item {
+                min-width: 100%;
+            }
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+       
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+       
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="profile-img">
+                <img src="img.jpeg" alt="Mounika">
+            </div>
+           
+            <div class="header-content">
+                <h1>Mounika pakalapati</h1>
+                <p>Computer Science Engineering Student</p>
+                <div class="contact-info">
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <span>mounikapakalapati3@gmail.com</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-phone"></i>
+                        <span>91-7337489604</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Eluru dt, AP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>ABOUT ME</h2>
+            </div>
+            <div class="education-container">
+                <div class="education-item">
+                    <p>I am a Computer Science Engineering student at Sasi Institute of Technology and Engineering. My career objective is to be placed in a good company, which helps me to reach my goals and also to be a part of the development of the organization. I am passionate about technology and constantly looking to enhance my skills in programming and web development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>EDUCATION</h2>
+            </div>
+            <div class="education-container">
+                <div class="education-item">
+                    <h3>B.Tech in Computer Science Engineering</h3>
+                    <p>Sasi Institute Of Technology and Engineering, Tadepalligudem</p>
+                    <p>JNTUK</p>
+                    <p>2022 - 2026 (Expected)</p>
+                    <p>CGPA: <span class="highlight">8.06</span></p>
+                </div>
+                <div class="education-item">
+                    <h3>Intermediate</h3>
+                    <p>Sri Chaitanya Junior College, Vijayawada</p>
+                    <p>Board of Intermediate Education, T.S</p>
+                    <p>2020 - 2022</p>
+                    <p>Percentage: <span class="highlight">92.5%</span></p>
+                </div>
+                <div class="education-item">
+                    <h3>SSC (10th Grade)</h3>
+                    <p>Sree Bharathi E.M School, Chintalapudi</p>
+                    <p>Board of Secondary Education, A.P.</p>
+                    <p>2020</p>
+                    <p>CGPA: <span class="highlight">10.0</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>TECHNICAL SKILLS</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>C</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Python</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>WEB TECHNOLOGIES</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>HTML</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>CSS</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>CERTIFICATIONS</h2>
+            </div>
+            <div class="certifications-container">
+                <div class="certification-item">
+                    <h3>Google Android Virtual Internship</h3>
+                    <p>AICTE-EduSkills</p>
+                    <p>Learned Android app development fundamentals and best practices</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Cyber Security Virtual Internship</h3>
+                    <p>AICTE-EduSkills</p>
+                    <p>Gained knowledge in network security, ethical hacking, and cybersecurity principles</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Machine Learning Virtual Internship</h3>
+                    <p>SkillDzire</p>
+                    <p>Explored machine learning algorithms, data preprocessing, and model evaluation techniques</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies">
+        <div class="container">
+            <div class="section-title">
+                <h2>HOBBIES</h2>
+            </div>
+            <div class="hobbies-container">
+                <div class="hobby-item">
+                    <div class="hobby-icon">
+                        <i class="fas fa-baseball-ball"></i>
+                    </div>
+                    <h3>Playing cricket</h3>
+                </div>
+                <div class="hobby-item">
+                    <div class="hobby-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Listening Music</h3>
+                </div>
+                <div class="hobby-item">
+                    <div class="hobby-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Gardening</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Mounika Pakalapati. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="linkedin.com/in/mounika-pakalapati-60abb2289"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/mounikapakalapati1"><i class="fab fa-github"></i></a>
+             
+            </div>
+            <p>4-2/2, Main Street, Kotapadu, Chatrai Mandal, Elure, Andhra Pradesh-534146</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
